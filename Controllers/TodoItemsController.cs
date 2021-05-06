@@ -108,6 +108,7 @@ namespace TodoApi.Controllers
             };
             _context.TodoItems.Add(todoDomain);
             await _context.SaveChangesAsync();
+            //In order to get a true ID we need to get ALL the items and pull the largest ID
 
             todoItem.Id = _context.TodoItems.Count();
 
